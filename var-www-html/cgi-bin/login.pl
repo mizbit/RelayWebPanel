@@ -10,7 +10,7 @@ my $cgi = new CGI ;
 my $usr = $cgi->param("usr") ;
 my $pwd = $cgi->param("pwd") ;
 
-if($usr eq 'marcelo' && $pwd eq 'bichofeo')
+if($usr eq 'xxx' && $pwd eq 'xxx')
 {
   print $cgi->redirect("/cgi-bin/susevich.pl") ;
   my $ses = rand(5) ;
