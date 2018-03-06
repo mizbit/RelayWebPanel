@@ -6,6 +6,15 @@ use Encode qw(decode encode);
 use JSON ;
 use File::Slurp;
 
+my $cgi = new CGI ;
+
+my $ses = read_file("/tmp/ses") ;
+if($ses eq '')
+{
+print "session expired" ;
+exit;
+}
+
 my $jsondir = "/var/www/html/susevich.json" ;
 my $json = new JSON ;
 my %todojson ;
@@ -13,8 +22,6 @@ my @luces ;
 
 my $decoded_json = decode_json(read_file("$jsondir"));
 
-
-my $cgi = new CGI ;
 my $luz ;
 my $manual ;
 my $on ;
@@ -72,7 +79,6 @@ print $cgi->redirect("/cgi-bin/susevich.pl?ok =1") ;
 
 # my $password = $cgi->param( "Password" );
 
-# print $cgi->redirect("/cgi-bin/susevich.pl") ;
 exit ;
 
 ###############################################################

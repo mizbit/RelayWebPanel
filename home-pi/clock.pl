@@ -40,6 +40,10 @@ foreach my $x (@{$decoded_json->{'luces'}})
         print ("APAGAR pin $pin[$i] $x->{luz} porque su hora es $h_on:$m_on y la hora actual es $hour:$min\n" ) ;
       }
   }
+  else
+  {
+    push @lights  , "python /var/www/html/cgi-bin/luces.py $pin[$i] 0" ;
+  }
   $i++ ;
 }
 

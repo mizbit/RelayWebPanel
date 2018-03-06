@@ -7,6 +7,13 @@ use Encode qw(decode encode);
 use JSON ;
 use File::Slurp;
 
+my $ses = read_file("/tmp/ses") ;
+if($ses eq '')
+{
+print "session expired" ;
+exit;
+}
+
 ##############################
 #### NOMBRES DE LAS LUCES ####
 ##############################
