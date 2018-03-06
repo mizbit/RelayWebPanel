@@ -1,0 +1,4 @@
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin
+* * * * * sh /home/pi/checknr.sh &>/dev/null
+* * * * * sh /home/pi/clock.sh &>/dev/null
+
