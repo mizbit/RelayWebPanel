@@ -42,6 +42,7 @@ foreach my $x (@{$decoded_json->{'luces'}})
   }
   else
   {
+    $x->{manual} = 0 ;
     push @lights  , "python /var/www/html/cgi-bin/luces.py $pin[$i] 0" ;
   }
   $i++ ;
